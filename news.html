@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Football</title>
+  <link rel="stylesheet" href="css/w3.css">
+  <link rel="stylesheet" href="css/common_style.css">
+	<link rel="stylesheet" href="css/news_style.css">
+</head>
+<body>
+<header>
+<img class="logo" src="images/logos/logo.png" alt="Premier logo">
+ <nav>
+ <ul class="menu_movil menu_drop">
+<li><a href="#menu" class="size_icon"> <i class="fa fa-bars"></i> </a>
+ <ul>
+ <li><a href="index.html">Home</a></li>
+ <li><a href="#news">News</a></li>
+ <li><a href="teams.html">Teams</a></li>
+ <li><a href="questionnaire.html">Game</a></li>
+ </ul>
+</li>
+</ul>
+<ul class="menu_pc menu_drop">
+ <li class="col-3 col-s-6"><a href="index.html">Home</a></li>
+ <li class="col-3 col-s-6"><a href="#news">News</a></li>
+ <li class="col-3 col-s-6"><a href="teams.html">Teams</a></li>
+ <li class="col-3 col-s-6"><a href="questionnaire.html">Game</a></li>
+</ul>
+ </nav>
+</header>
+<body>
+  <table id="demo" border="1">
+  </table>
+
+  <script>
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+      }
+    };
+
+    // Realizar la solicitud al archivo XML
+    xmlhttp.open("GET", "table.xml", true);
+    xmlhttp.send();
+
+    function myFunction(xml) {
+      var x, i, xmlDoc, table;
+
+      // Obtener el objeto XMLDocument a partir de la respuesta XML
+      xmlDoc = xml.responseXML;
+
+      // Crear la estructura de la tabla
+      table = "<tr><th>Position</th><th>name</th><th>totalPoints</th><th>homePoints</th><th>awayPoints</th><th>matchesPlayed</th><th>homeMatchesPlayed</th><th>awayMatchesPlayed</th><th>wins</th><th>homeWins</th><th>awayWins</th><th>draws</th><th>homeDraws</th><th>awayDraws</th><th>losses</th><th>homeLosses</th><th>awayLosses</th><th>goalsFor</th><th>homeGoalsFor</th><th>awayGoalsFor</th><th>goalsAgainst</th><th>homeGoalsAgainst><th>awayGoalsAgainst</th></tr>";
+
+      // Obtener todos los nodos CD del archivo XML
+      x = xmlDoc.getElementsByTagName("CD");
+
+      // Recorrer los elementos CD y agregar los datos a la tabla
+      for (i = 0; i < x.length; i++) {
+        table += "<tr><td>" +
+          x[i].getElementsByTagName("POSITION")[0].textContent +
+          "</td><td>" +
+          x[i].getElementsByTagName("NAME")[0].textContent +
+          "</td></tr>" +
+            x[i].getElementsByTagName("TOTALPOINTS")[0].textContent +
+          "</td><td>" +
+          x[i].getElementsByTagName("HOMEPOINTS")[0].textContent +
+          "</td></tr>" +
+            x[i].getElementsByTagName("AWAYPOINTS")[0].textContent +
+          "</td><td>" +
+          x[i].getElementsByTagName("MATCHESPLAYED")[0].textContent +
+          "</td></tr>" +
+            x[i].getElementsByTagName("HOMEMATCHESPLAYED")[0].textContent +
+          "</td><td>" +
+          x[i].getElementsByTagName("AWAYMATCHESPLAYED")[0].textContent +
+          "</td></tr>" +
+            x[i].getElementsByTagName("HOMEWINS")[0].textContent +
+          "</td><td>" +
+            x[i].getElementsByTagName("AWAYWINS")[0].textContent +
+          "</td><td>" +
+            x[i].getElementsByTagName("DRAWS")[0].textContent +
+          "</td><td>" +
+            x[i].getElementsByTagName("HOMEDRAWS")[0].textContent +
+          "</td><td>" +
+            x[i].getElementsByTagName("AWAYDRAWS")[0].textContent +
+          "</td><td>" +
+            x[i].getElementsByTagName("LOSSES")[0].textContent +
+          "</td><td>" +
+            x[i].getElementsByTagName("HOMELOSSES")[0].textContent +
+          "</td><td>" +
+            x[i].getElementsByTagName("AWAYLOSSES")[0].textContent +
+          "</td><td>" +
+            x[i].getElementsByTagName("GOALSFOR")[0].textContent +
+          "</td><td>" +
+            x[i].getElementsByTagName("HOMEGOALSFOR")[0].textContent +
+          "</td><td>" +
+            x[i].getElementsByTagName("AWAYGOALSFOR")[0].textContent +
+          "</td><td>" +
+            x[i].getElementsByTagName("GOALSAGAINST")[0].textContent +
+          "</td><td>" +
+            x[i].getElementsByTagName("HOMEGOALSAGAINST")[0].textContent +
+          "</td><td>" +
+            x[i].getElementsByTagName("AWAYGOALSAGAINST")[0].textContent +
+          "</td><td>";
+      }
+
+      // Insertar la tabla generada en el elemento con el ID "demo"
+      document.getElementById("demo").innerHTML = table;
+    }
+  </script>
+  <iframe src="https://resultados.as.com/resultados/futbol/inglaterra/equipos/"></iframe>
+  <footer>
+  		<div class="footer-container">
+  			<div class="footer-newsletter col-s-6 col-6">
+  				<h3>Stay on top of the Premier League</h3>
+  				<form action="#" method="post">
+  					<input type="email" name="email" placeholder="Enter your email" required>
+  					<button type="submit">Subscribe</button>
+  				</form>
+  			</div>
+  			<div class="footer-links col-s-6 col-6">
+  				<h3>Links</h3>
+  				<ul>
+  					<li><a href="#">News</a></li>
+  					<li><a href="index.html">Blog</a></li>
+  					<li><a href="https://twitter.com/premierleague">Twitter</a></li>
+  					<li><a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwiS-4yG4Yv-AhUUhtUKHYn_AKgYABAAGgJ3cw&ohost=www.google.com&cid=CAESauD2bBVyD7pBb3_dJZTvL95XQ6N6e2iNU77RDi55FBWmySNLjKMqQa9rWJuVgTPBa8-1pCHUF8j3LMZRWC4V9hwodarwcQGXLHuDcZgcq42UtLpl5flQeju8Wmj7VMkbHaMv4R54P-JXRHc&sig=AOD64_28TivkwpWEuK-4qT0GiCaJCHxQHg&q&adurl&ved=2ahUKEwj_54WG4Yv-AhU2RaQEHZdeAgAQ0Qx6BAgHEAE">Bets</a></li>
+  				</ul>
+  			</div>
+  		</div>
+  	</footer>
+</body>
+</html>
