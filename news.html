@@ -50,7 +50,7 @@ function myFunction(xml) {
  var x, i, xmlDoc, table;
 
  xmlDoc = xml.responseXML;
-      table = "<tr><th>Position</th><th>name</th><th>totalPoints</th><th>homePoints</th><th>awayPoints</th><th>matchesPlayed</th><th>homeMatchesPlayed</th><th>awayMatchesPlayed</th><th>wins</th><th>homeWins</th><th>awayWins</th><th>draws</th><th>homeDraws</th><th>awayDraws</th><th>losses</th><th>homeLosses</th><th>awayLosses</th><th>goalsFor</th><th>homeGoalsFor</th><th>awayGoalsFor</th><th>goalsAgainst</th><th>homeGoalsAgainst><th>awayGoalsAgainst</th></tr>";
+      table = "<tr><th>Position</th><th>name</th><th>totalPoints</th><th>matchesPlayed</th><th>wins</th><th>draws</th><th>losses</th><th>goalsFor</th><th>goalsAgainst</th></tr>";
 // Obtenemos todos los nodos denominados CD del archivo xml
  x = xmlDoc.getElementsByTagName("team");
 // Hacemos un bucle por todos los elementos CD
@@ -63,45 +63,17 @@ function myFunction(xml) {
  "</td><td>" +
  x[i].getElementsByTagName("totalPoints")[0].childNodes[0].nodeValue +
  "</td><td>" +
- x[i].getElementsByTagName("homePoints")[0].childNodes[0].nodeValue +
- "</td><td>" +
- x[i].getElementsByTagName("awayPoints")[0].childNodes[0].nodeValue +
- "</td><td>" +
  x[i].getElementsByTagName("matchesPlayed")[0].childNodes[0].nodeValue +
- "</td><td>" +
- x[i].getElementsByTagName("homeMatchesPlayed")[0].childNodes[0].nodeValue +
- "</td><td>" +
- x[i].getElementsByTagName("awayMatchesPlayed")[0].childNodes[0].nodeValue +
  "</td><td>" +
  x[i].getElementsByTagName("wins")[0].childNodes[0].nodeValue +
  "</td><td>" +
- x[i].getElementsByTagName("homeWins")[0].childNodes[0].nodeValue +
- "</td><td>" +
- x[i].getElementsByTagName("awayWins")[0].childNodes[0].nodeValue +
- "</td><td>" +
  x[i].getElementsByTagName("draws")[0].childNodes[0].nodeValue +
- "</td><td>" +
- x[i].getElementsByTagName("homeDraws")[0].childNodes[0].nodeValue +
- "</td><td>" +
- x[i].getElementsByTagName("awayDraws")[0].childNodes[0].nodeValue +
  "</td><td>" +
  x[i].getElementsByTagName("losses")[0].childNodes[0].nodeValue +
  "</td><td>" +
- x[i].getElementsByTagName("homeLosses")[0].childNodes[0].nodeValue +
- "</td><td>" +
- x[i].getElementsByTagName("awayLosses")[0].childNodes[0].nodeValue +
- "</td><td>" +
  x[i].getElementsByTagName("goalsFor")[0].childNodes[0].nodeValue +
  "</td><td>" +
- x[i].getElementsByTagName("homeGoalsFor")[0].childNodes[0].nodeValue +
- "</td><td>" +
- x[i].getElementsByTagName("awayGoalsFor")[0].childNodes[0].nodeValue +
- "</td><td>" +
  x[i].getElementsByTagName("goalsAgainst")[0].childNodes[0].nodeValue +
- "</td><td>" +
- x[i].getElementsByTagName("homeGoalsAgainst")[0].childNodes[0].nodeValue +
- "</td><td>" +
- x[i].getElementsByTagName("awayGoalsAgainst")[0].childNodes[0].nodeValue +
  "</td></tr>";
  }
  document.getElementById("demo").innerHTML = table;
