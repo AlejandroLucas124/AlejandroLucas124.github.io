@@ -35,83 +35,77 @@
   <table id="demo" border="1">
   </table>
 
-  <script>
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        myFunction(this);
-      }
-    };
+<script>
+ var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+ if (this.readyState == 4 && this.status == 200) {
+ myFunction(this);
+ }
+ };
+// Abrimos el archivo que esta alojado en el servidor cd_catalog.xml
+ xmlhttp.open("GET", "table.xml" , true);
+ xmlhttp.send();
+function myFunction(xml) {
+ var x, i, xmlDoc, table;
 
-    // Realizar la solicitud al archivo XML
-    xmlhttp.open("GET", "table.xml", true);
-    xmlhttp.send();
-
-    function myFunction(xml) {
-      var x, i, xmlDoc, table;
-
-      // Obtener el objeto XMLDocument a partir de la respuesta XML
-      xmlDoc = xml.responseXML;
-
-      // Crear la estructura de la tabla
+ xmlDoc = xml.responseXML;
       table = "<tr><th>Position</th><th>name</th><th>totalPoints</th><th>homePoints</th><th>awayPoints</th><th>matchesPlayed</th><th>homeMatchesPlayed</th><th>awayMatchesPlayed</th><th>wins</th><th>homeWins</th><th>awayWins</th><th>draws</th><th>homeDraws</th><th>awayDraws</th><th>losses</th><th>homeLosses</th><th>awayLosses</th><th>goalsFor</th><th>homeGoalsFor</th><th>awayGoalsFor</th><th>goalsAgainst</th><th>homeGoalsAgainst><th>awayGoalsAgainst</th></tr>";
-
-      // Obtener todos los nodos CD del archivo XML
-      x = xmlDoc.getElementsByTagName("CD");
-
-      // Recorrer los elementos CD y agregar los datos a la tabla
-      for (i = 0; i < x.length; i++) {
-        table += "<tr><td>" +
-          x[i].getElementsByTagName("POSITION")[0].textContent +
-          "</td><td>" +
-          x[i].getElementsByTagName("NAME")[0].textContent +
-          "</td></tr>" +
-            x[i].getElementsByTagName("TOTALPOINTS")[0].textContent +
-          "</td><td>" +
-          x[i].getElementsByTagName("HOMEPOINTS")[0].textContent +
-          "</td></tr>" +
-            x[i].getElementsByTagName("AWAYPOINTS")[0].textContent +
-          "</td><td>" +
-          x[i].getElementsByTagName("MATCHESPLAYED")[0].textContent +
-          "</td></tr>" +
-            x[i].getElementsByTagName("HOMEMATCHESPLAYED")[0].textContent +
-          "</td><td>" +
-          x[i].getElementsByTagName("AWAYMATCHESPLAYED")[0].textContent +
-          "</td></tr>" +
-            x[i].getElementsByTagName("HOMEWINS")[0].textContent +
-          "</td><td>" +
-            x[i].getElementsByTagName("AWAYWINS")[0].textContent +
-          "</td><td>" +
-            x[i].getElementsByTagName("DRAWS")[0].textContent +
-          "</td><td>" +
-            x[i].getElementsByTagName("HOMEDRAWS")[0].textContent +
-          "</td><td>" +
-            x[i].getElementsByTagName("AWAYDRAWS")[0].textContent +
-          "</td><td>" +
-            x[i].getElementsByTagName("LOSSES")[0].textContent +
-          "</td><td>" +
-            x[i].getElementsByTagName("HOMELOSSES")[0].textContent +
-          "</td><td>" +
-            x[i].getElementsByTagName("AWAYLOSSES")[0].textContent +
-          "</td><td>" +
-            x[i].getElementsByTagName("GOALSFOR")[0].textContent +
-          "</td><td>" +
-            x[i].getElementsByTagName("HOMEGOALSFOR")[0].textContent +
-          "</td><td>" +
-            x[i].getElementsByTagName("AWAYGOALSFOR")[0].textContent +
-          "</td><td>" +
-            x[i].getElementsByTagName("GOALSAGAINST")[0].textContent +
-          "</td><td>" +
-            x[i].getElementsByTagName("HOMEGOALSAGAINST")[0].textContent +
-          "</td><td>" +
-            x[i].getElementsByTagName("AWAYGOALSAGAINST")[0].textContent +
-          "</td><td>";
-      }
-
-      // Insertar la tabla generada en el elemento con el ID "demo"
-      document.getElementById("demo").innerHTML = table;
-    }
-  </script>
+// Obtenemos todos los nodos denominados CD del archivo xml
+ x = xmlDoc.getElementsByTagName("team");
+// Hacemos un bucle por todos los elementos CD
+ for (i = 0; i < x.length; i++) {
+// Del elemento X, obtenemos del primer elemento denominado "artist"
+ table += "<tr><td>" +
+ x[i].getElementsByTagName("position")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("totalPoints")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("homePoints")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("awayPoints")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("matchesPlayed")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("homeMatchesPlayed")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("awayMatchesPlayed")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("wins")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("homeWins")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("awayWins")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("draws")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("homeDraws")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("awayDraws")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("losses")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("homeLosses")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("awayLosses")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("goalsFor")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("homeGoalsFor")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("awayGoalsFor")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("goalsAgainst")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("homeGoalsAgainst")[0].childNodes[0].nodeValue +
+ "</td><td>" +
+ x[i].getElementsByTagName("awayGoalsAgainst")[0].childNodes[0].nodeValue +
+ "</td></tr>";
+ }
+ document.getElementById("demo").innerHTML = table;
+}
+</script>
   <iframe src="https://resultados.as.com/resultados/futbol/inglaterra/equipos/"></iframe>
   <footer>
   		<div class="footer-container">
