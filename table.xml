@@ -2,7 +2,7 @@
 <!DOCTYPE table
 [
 <!ELEMENT table (team+)>
-<!ELEMENT team (position,name,totalPoints,homePoints,awayPoints,matchesPlayed,homeMatchesPlayed,awayMatchesPlayed,wins,homeWins,awayWins,draws,homeDraws,awayDraws,losses,homeLosses,awayLosses,goalsFor,homeGoalsFor,awayGoalsFor,goalsAgainst,homeGoalsAgainst,awayGoalsAgainst)>
+<!ELEMENT team (position,name,totalPoints,matchesPlayed,wins,draws,losses,goalsFor,goalsAgainst)>
 <!ELEMENT position (#PCDATA)>
 <!ELEMENT name (#PCDATA)>
 <!ELEMENT totalPoints (#PCDATA)>
