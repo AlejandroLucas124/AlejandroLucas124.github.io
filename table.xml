@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE table
+[
+<!ELEMENT table (team+)>
+<!ELEMENT team (position,name,totalPoints,homePoints,awayPoints,matchesPlayed,homeMatchesPlayed,awayMatchesPlayed,wins,homeWins,awayWins,draws,homeDraws,awayDraws,losses,homeLosses,awayLosses,goalsFor,homeGoalsFor,awayGoalsFor,goalsAgainst,homeGoalsAgainst,awayGoalsAgainst)>
+<!ELEMENT position (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT totalPoints (#PCDATA)>
+<!ELEMENT homePoints (#PCDATA)>
+<!ELEMENT awayPoints (#PCDATA)>
+<!ELEMENT matchesPlayed (#PCDATA)>
+<!ELEMENT homeMatchesPlayed (#PCDATA)>
+<!ELEMENT awayMatchesPlayed (#PCDATA)>
+<!ELEMENT wins (#PCDATA)>
+<!ELEMENT homeWins (#PCDATA)>
+<!ELEMENT awayWins (#PCDATA)>
+<!ELEMENT draws (#PCDATA)>
+<!ELEMENT homeDraws (#PCDATA)>
+<!ELEMENT awayDraws (#PCDATA)>
+<!ELEMENT losses (#PCDATA)>
+<!ELEMENT homeLosses (#PCDATA)>
+<!ELEMENT awayLosses (#PCDATA)>
+<!ELEMENT goalsFor (#PCDATA)>
+<!ELEMENT homeGoalsFor (#PCDATA)>
+<!ELEMENT awayGoalsFor (#PCDATA)>
+<!ELEMENT goalsAgainst (#PCDATA)>
+<!ELEMENT homeGoalsAgainst (#PCDATA)>
+<!ELEMENT awayGoalsAgainst (#PCDATA)>
+]>
 <table>
   <team>
     <position>1</position>
